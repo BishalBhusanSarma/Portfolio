@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bishal Bhusan Sarma - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="home">
+        <div class="container">
+            <h1>Bishal Bhusan Sarma</h1>
+            <p class="bio">Machine Learning | Python</p>
+            <div class="social-media-links">
+                <a href="https://github.com/BishalBhusanSarma" target="_blank">Github</a>
+                <a href="https://in.linkedin.com/in/bishal-bhusan-sarma-a51b242bb" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="menu-container">
+            <div class="three-dot-button">⋮</div>
+            <div class="menu-content">
+                <button id="theme-toggle">Toggle Theme</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="proj-head">Skills</h2>
+            <ul class="skills-list">
+                <li><strong>Programming Languages:</strong> Python, Java.</li>
+                <li><strong>Python Libraries:</strong> Numpy, Pandas, Scikit-learn, Matplotlib, Streamlit, etc.</li>
+                <li><strong>Tools:</strong> VS Code, PyCharm, Google Colab, Tableau, Figma, Chat GPT, Android Studio, MS Office apps.</li>
+                <li><strong>Other Skills:</strong> Android Development (Frontend), Report Writing and Presenting.</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="projects-section">
+        <section id="projects">
+            <div class="container">
+                <h2 class="proj-head">Projects</h2>
+
+                <div class="projects-row">
+                    <div class="project-card">
+                        <h3>Background Remover Web-App</h3>
+                        <p class="description">
+                            A Streamlit-based web app that automatically removes image 
+                            <span class="dots">...</span>
+                            <span class="hidden-text" style="display: none;">
+                                backgrounds with ease. Built using Python and Streamlit, this tool allows users to upload an image, seamlessly removes its background, and provides the option to replace it with a solid custom color. It’s fast, intuitive, and requires no manual editing—perfect for quick design tasks or profile image editing.
+                            </span>
+                        </p>
+                        <button class="read-more">Read Full Description</button>
+                        <div class="project-row">
+                            <a href="https://removez.streamlit.app" class="try-it-button" target="_blank">Try It</a>
+                            <a href="https://github.com/BishalBhusanSarma/Background_remover" class="github-link" target="_blank">Github Link</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Movie Recommendation System</h3>
+                        <p class="description">
+                            A prototype simulating movie suggestions like Netflix & 
+                            <span class="dots">...</span>
+                            <span class="hidden-text" style="display: none;">
+                                Prime Video. This system uses machine learning to provide personalized movie suggestions based on content similarity. Users input a movie title, and the system recommends 5 similar movies. Clicking any suggestion opens a Google search with more info. Built with Python, Pandas, Scikit-learn, and deployed using Streamlit.
+                            </span>
+                        </p>
+                        <button class="read-more">Read Full Description</button>
+                        <div class="project-row">
+                            <a href="https://movierecommendationwebapp.streamlit.app/" class="try-it-button" target="_blank">Try It</a>
+                            <a href="https://github.com/BishalBhusanSarma/Movie_recommendation" class="github-link" target="_blank">Github Link</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects-row">
+                    <div class="project-card">
+                        <h3>Fashion Recommender System</h3>
+                        <p class="description">
+                            Get visually similar fashion items by uploading a 
+                            <span class="dots">...</span>
+                            <span class="hidden-text" style="display: none;">
+                                clothing image. A deep learning-based fashion recommender system that uses content-based filtering to suggest similar clothing items. Built following YouTube tutorials and online datasets, this tool mimics the product suggestion systems of platforms like Amazon and Flipkart. Users can either upload an image or use a URL to get recommendations.
+                            </span>
+                        </p>
+                        <button class="read-more">Read Full Description</button>
+                        <div class="project-row">
+                            <a href="https://github.com/BishalBhusanSarma/Fashion_Recommender_system" class="github-link" target="_blank">Github Link</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Touchless Mouse Controller</h3>
+                        <p class="description">
+                            Control your PC’s mouse using only hand gestures with 
+                            <span class="dots">...</span>
+                            <span class="hidden-text" style="display: none;">
+                                a webcam. This Python project uses MediaPipe, OpenCV, and PyAutoGUI to turn your hand gestures into mouse movements. The index finger's position controls the cursor, and bringing the index and thumb together triggers a click. It's a futuristic way to interact with your system—no physical mouse needed!
+                            </span>
+                        </p>
+                        <button class="read-more">Read Full Description</button>
+                        <div class="project-row">
+                            <a href="https://github.com/BishalBhusanSarma/Hand_recog_mouse_pointer" class="github-link" target="_blank">Github Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bishal Bhusan Sarma. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS for Read More Toggle -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const readMoreButtons = document.querySelectorAll(".read-more");
+
+            readMoreButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const description = button.previousElementSibling;
+                    const dots = description.querySelector(".dots");
+                    const hiddenText = description.querySelector(".hidden-text");
+
+                    const isHidden = hiddenText.style.display === "none" || hiddenText.style.display === "";
+
+                    hiddenText.style.display = isHidden ? "inline" : "none";
+                    dots.style.display = isHidden ? "none" : "inline";
+                    button.textContent = isHidden ? "Read Less" : "Read Full Description";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
