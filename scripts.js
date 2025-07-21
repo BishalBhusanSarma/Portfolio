@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             button.textContent = isHidden ? "Read Less" : "Read Full Description";
         });
     });
-});
+
 
 // Handle three-dot button functionality
 if (threeDotButton) {
